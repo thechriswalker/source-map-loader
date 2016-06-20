@@ -1,6 +1,9 @@
-[![Build Status](https://travis-ci.org/arielschiavoni/source-map-loader.svg?branch=master)](https://travis-ci.org/arielschiavoni/source-map-loader)
+# source maps loader for webpack
 
-# source map loader for webpack
+> Forked from arielschiavoni/source-map-loader who forked from webpack/source-map-loader.
+> I did this purely to publish under a different name (`source-maps-loader` vs `source-map-loader` so I could easily use the fixed functionality.
+>
+> **No credit for actual code should be given to me, but the original authors.**
 
 Extracts SourceMaps for source files that as added as `sourceMappingURL` comment.
 
@@ -17,14 +20,14 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js$/,
-        loader: "source-map-loader"
+        loader: "source-maps-loader"
       }
     ]
   }
 };
 ```
 
-This extracts all SourceMaps from all files. That's not so performance-wise so you may only want to apply the loader to relevant files.
+This extracts all SourceMaps from all files. That's not so good performance-wise so you may only want to apply the loader to relevant files.
 
 ## License
 
