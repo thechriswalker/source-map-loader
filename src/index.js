@@ -1,7 +1,7 @@
-import fs from 'fs';
-import path from 'path';
-import async from 'async';
-import loaderUtils from 'loader-utils';
+const path = require('path');
+const fs = require('fs');
+const async = require('async');
+const loaderUtils = require('loader-utils');
 
 const baseRegex = '\\s*[@#]\\s*sourceMappingURL\\s*=\\s*([^\\s]*)';
 // Matches /* ... */ comments
@@ -11,7 +11,7 @@ const regex2 = new RegExp(`//${baseRegex}($|\n|\r\n?)`);
 // Matches DataUrls
 const regexDataUrl = /data:[^;\n]+;base64,(.*)/;
 
-export default function(input, inputMap) {
+module.exports = function(input, inputMap) {
   this.cacheable && this.cacheable();
 
   const {resolve, addDependency, emitWarning = () => {}} = this;

@@ -4,6 +4,9 @@
 > I did this purely to publish under a different name (`source-maps-loader` vs `source-map-loader` so I could easily use the fixed functionality.
 >
 > **No credit for actual code should be given to me, but the original authors.**
+>
+> I simply removed the babel stuff so this is node 6.x compatible without any transpilation needed.
+
 
 Extracts SourceMaps for source files that as added as `sourceMappingURL` comment.
 

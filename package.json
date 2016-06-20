@@ -3,26 +3,17 @@
   "version": "0.1.5",
   "author": "Tobias Koppers @sokra",
   "description": "extracts inlined source map and offers it to webpack",
-  "main": "./lib/index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "prepublish": "scripts/prepublish.sh",
-    "build": "scripts/build.sh",
-    "test": "scripts/test.sh",
-    "clean": "scripts/clean.sh",
-    "lint": "scripts/lint.sh",
-    "status": "scripts/status.sh"
+    "test": "mocha test"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
-    "babel-eslint": "^4.1.0",
     "chai": "^3.2.0",
-    "eslint": "^1.2.1",
-    "isparta": "^3.0.4",
     "mocha": "^2.3.2"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/webpack/source-map-loader.git"
+    "url": "git://github.com/thechriswalker/source-maps-loader.git"
   },
   "licenses": [
     {
@@ -33,5 +24,8 @@
   "dependencies": {
     "loader-utils": "~0.2.2",
     "async": "^1.4.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }

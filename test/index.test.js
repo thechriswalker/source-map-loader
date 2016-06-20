@@ -1,7 +1,7 @@
-import path from 'path';
-import fs from 'fs';
-import loader from '../src';
-import {expect} from 'chai';
+const path = require('path');
+const fs = require('fs');
+const loader = require('../src');
+const { expect } = require('chai');
 
 const execLoader = (filename, callback) => {
   let async = false;
@@ -38,7 +38,7 @@ const execLoader = (filename, callback) => {
   if (!async) return callback(null, res, null, deps, warns);
 };
 
-describe('source-map-loader', () => {
+describe('source-maps-loader', () => {
   let sourceMaps;
   const originalCode = 'let sourceMaps = true;\n';
   const compiledCode = '"use strict";\n\nvar sourceMaps = true;\n\n';
