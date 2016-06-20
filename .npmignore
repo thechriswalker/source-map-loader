@@ -1,6 +1,2 @@
-.babelrc
 .eslintrc
-.travis.yml
 test
-scripts
-src
