@@ -1,6 +1,6 @@
 {
   "name": "source-maps-loader",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "author": "Tobias Koppers @sokra",
   "description": "extracts inlined source map and offers it to webpack",
   "main": "./src/index.js",
