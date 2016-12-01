@@ -9,7 +9,7 @@ const regex1 = new RegExp(`/\\*${baseRegex}\\s*\\*/`);
 // Matches // .... comments
 const regex2 = new RegExp(`//${baseRegex}($|\n|\r\n?)`);
 // Matches DataUrls
-const regexDataUrl = /data:[^;\n]+;(?:charset=utf8;)?base64,(.*)/;
+const regexDataUrl = /data:[^;\n]+;(?:charset=[^;\n]+;)?base64,(.*)/;
 
 module.exports = function(input, inputMap) {
   this.cacheable && this.cacheable();
