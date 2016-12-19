@@ -5,7 +5,7 @@ const loaderUtils = require('loader-utils');
 
 const baseRegex = '\\s*[@#]\\s*sourceMappingURL\\s*=\\s*([^\\s]*)';
 // Matches /* ... */ comments
-const regex1 = new RegExp(`/\\*${baseRegex}\\s*\\*/`);
+const regex1 = new RegExp(`/^\\/\\*${baseRegex}\\s*\\*\\/$/`);
 // Matches // .... comments
 const regex2 = new RegExp(`//${baseRegex}($|\n|\r\n?)`);
 // Matches DataUrls
