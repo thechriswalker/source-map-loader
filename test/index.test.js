@@ -81,6 +81,35 @@ describe('source-maps-loader', () => {
     });
   });
 
+  it('should process inlined SourceMaps (charset utf8)', done => {
+    const file = 'test.es5.charset.utf8.js';
+    sourceMaps.file = 'test.es5.inline.js'; //we copied the dataURI
+
+    execLoader(path.join(__dirname, 'fixtures', file), (err, res, map, deps, warns) => {
+      expect(err).to.be.null;
+      expect(warns).to.eql([]);
+      expect(res).to.equal(compiledCode);
+      expect(map).to.eql(sourceMaps);
+      expect(deps).to.eql([]);
+      done();
+    });
+  });
+
+
+  it('should process inlined SourceMaps (different charset)', done => {
+    const file = 'test.es5.charset.iso-8859-1.js';
+    sourceMaps.file = 'test.es5.inline.js'; //we copied the dataURI
+
+    execLoader(path.join(__dirname, 'fixtures', file), (err, res, map, deps, warns) => {
+      expect(err).to.be.null;
+      expect(warns).to.eql([]);
+      expect(res).to.equal(compiledCode);
+      expect(map).to.eql(sourceMaps);
+      expect(deps).to.eql([]);
+      done();
+    });
+  });
+
   it('should process external SourceMaps', done => {
     const file = 'test.es5.js';
     sourceMaps.file = file;
@@ -194,4 +223,16 @@ describe('source-maps-loader', () => {
       });
     });
   });
+
+  it('should be able to tell the difference between sourceMap generating functions and their outputs', done => {
+    const file = 'test.generator.js';
+    sourceMaps.file = file;
+
+    execLoader(path.join(__dirname, 'fixtures', file), (err, res, map, deps, warns) => {
+      expect(err).to.be.null;
+      expect(warns).to.be.empty;
+      done();
+    });
+  });
+
 });
